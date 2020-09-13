@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1572966232 source:c:\users\alex_2\desktop\appunti\universita\programmazione_c\funzioni\random\main.c
+	<stdio.h>
+	<stdlib.h>
+
