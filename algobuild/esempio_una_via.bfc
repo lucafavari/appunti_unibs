@@ -1,0 +1,11 @@
+PROG main
+	IN costo
+	IN qta
+	ASSIGN sconto = 0
+	IF qta > 10
+		ASSIGN sconto = 0.1
+	ELSE //if qta > 10
+	END IF //qta > 10
+	ASSIGN costo_totale = qta*costo * (1 -sconto)
+	OUT costo_totale
+END PROG //main

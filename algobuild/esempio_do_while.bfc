@@ -1,0 +1,12 @@
+PROG main
+	DO_WHILE //voto < 1 || voto > 110
+		IN voto
+	END DO_WHILE voto < 1 || voto > 110
+	IN voto
+	WHILE voto < 1 || voto > 110
+		OUT "Hai fatto un errore, reinserisci"
+		IN voto
+	END WHILE //voto < 1 || voto > 110
+	ASSIGN in_decimi = (voto/110)*10
+	OUT in_decimi
+END PROG //main

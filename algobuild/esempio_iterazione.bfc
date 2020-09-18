@@ -1,0 +1,8 @@
+PROG main
+	IN N
+	ASSIGN M = 1
+	WHILE M*M < N
+		ASSIGN M = M + 1
+	END WHILE //M*M < N
+	OUT (M - 1)*(M-1)
+END PROG //main

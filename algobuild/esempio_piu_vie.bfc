@@ -1,0 +1,12 @@
+PROG main
+	IN voto
+	IF voto < 18
+		OUT "Da ripetere"
+	ELSE //if voto < 18
+		IF voto > 24
+			OUT "Da registrare"
+		ELSE //if voto > 24
+			OUT "Orale facoltativo"
+		END IF //voto > 24
+	END IF //voto < 18
+END PROG //main
