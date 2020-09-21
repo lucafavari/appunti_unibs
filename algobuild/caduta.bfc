@@ -1,0 +1,11 @@
+PROG main
+	IN h
+	ASSIGN s = 0
+	ASSIGN t = 0
+	WHILE h - s > 0
+		ASSIGN t = t + 0.1
+		ASSIGN s = 0.5 * 9.81 * t * t
+		OUT t
+		OUT h - s
+	END WHILE //h - s > 0
+END PROG //main

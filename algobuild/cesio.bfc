@@ -1,0 +1,9 @@
+PROG main
+	IN qta
+	ASSIGN anni = 0
+	WHILE qta > 0.001
+		ASSIGN qta = qta / 2
+		ASSIGN anni = anni + 30
+	END WHILE //qta > 0.001
+	OUT anni
+END PROG //main

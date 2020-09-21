@@ -1,0 +1,8 @@
+PROG main
+	IN N
+	ASSIGN risultato = 1
+	FOR i = 1; i <= N; i = i + 1
+		ASSIGN risultato = risultato * i
+	END FOR //i = 1; i <= N; i = i + 1
+	OUT risultato
+END PROG //main

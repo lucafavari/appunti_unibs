@@ -1,0 +1,12 @@
+PROG main
+	IN N
+	ASSIGN pi_greco = 0
+	ASSIGN segno = 1
+	ASSIGN denominatore = 1
+	FOR i = 0; i < N; i = i +1
+		ASSIGN pi_greco = pi_greco + (segno)*1/denominatore
+		ASSIGN segno = -segno
+		ASSIGN denominatore = denominatore + 2
+	END FOR //i = 0; i < N; i = i +1
+	OUT pi_greco*4
+END PROG //main

@@ -1,0 +1,15 @@
+PROG main
+	IN a
+	IN b
+	IN c
+	IF a > b
+		ASSIGN massimo = a
+	ELSE //if a > b
+		ASSIGN massimo = b
+	END IF //a > b
+	IF c > massimo
+		ASSIGN massimo = c
+	ELSE //if c > massimo
+	END IF //c > massimo
+	OUT massimo
+END PROG //main
