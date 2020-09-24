@@ -1,0 +1,9 @@
+PROG main
+	IN N
+	ASSIGN numero_cifre  = 0
+	WHILE N != 0
+		ASSIGN numero_cifre = numero_cifre + 1
+		ASSIGN N =( N -  N%10)  / 10
+	END WHILE //N != 0
+	OUT numero_cifre
+END PROG //main

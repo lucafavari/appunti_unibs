@@ -1,0 +1,18 @@
+PROG main
+	IN N
+	IN precedente
+	ASSIGN crescente = 1
+	FOR i = 0; i < N - 1; i = i + 1
+		IN numero
+		IF numero <= precedente
+			ASSIGN crescente = 0
+		ELSE //if numero <= precedente
+		END IF //numero <= precedente
+		ASSIGN precedente = numero
+	END FOR //i = 0; i < N - 1; i = i + 1
+	IF crescente == 1
+		OUT "Crescente"
+	ELSE //if crescente == 1
+		OUT "Non crescente"
+	END IF //crescente == 1
+END PROG //main

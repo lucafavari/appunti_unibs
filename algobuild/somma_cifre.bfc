@@ -1,0 +1,10 @@
+PROG main
+	IN N
+	ASSIGN somma_cifre  = 0
+	WHILE N != 0
+		ASSIGN cifra = N % 10
+		ASSIGN somma_cifre = somma_cifre + cifra
+		ASSIGN N =( N -  cifra)  / 10
+	END WHILE //N != 0
+	OUT somma_cifre
+END PROG //main
