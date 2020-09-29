@@ -1,0 +1,24 @@
+PROG main
+	IN N
+	ASSIGN cifre_pari = 0
+	ASSIGN cifre_dispari = 0
+	ASSIGN flag = 0
+	WHILE N > 0
+		ASSIGN temp = floor(N / 10)
+		ASSIGN cifra = N - temp*10
+		IF flag == 0
+			ASSIGN cifre_pari = cifre_pari + cifra
+			ASSIGN flag = 1
+		ELSE //if flag == 0
+			ASSIGN cifre_dispari = cifre_dispari + cifra
+			ASSIGN flag = 0
+		END IF //flag == 0
+		ASSIGN N = temp
+	END WHILE //N > 0
+	ASSIGN differenza = abs(cifre_pari -cifre_dispari)
+	IF differenza == 0
+		OUT "Divisibile per 11"
+	ELSE //if differenza == 0
+		OUT "Non divisibile per 11"
+	END IF //differenza == 0
+END PROG //main

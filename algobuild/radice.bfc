@@ -1,0 +1,15 @@
+PROG main
+	IN N
+	IN delta
+	ASSIGN a = 0
+	ASSIGN b = N
+	WHILE b - a > delta
+		ASSIGN m = (a + b) / 2
+		IF m * m > N
+			ASSIGN b = m
+		ELSE //if m * m > N
+			ASSIGN a = m
+		END IF //m * m > N
+	END WHILE //b - a > delta
+	OUT m
+END PROG //main
