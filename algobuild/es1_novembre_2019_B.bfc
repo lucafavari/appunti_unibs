@@ -1,0 +1,17 @@
+PROG main
+	IN N
+	IN K
+	ASSIGN contatore = 0
+	FOR i = 0; i < N; i = i + 1
+		IN a
+		ASSIGN temp = K
+		WHILE temp > 0
+			IF temp == a
+				ASSIGN contatore = contatore + 1
+			ELSE //if temp == a
+			END IF //temp == a
+			ASSIGN temp = floor(temp/10)
+		END WHILE //temp > 0
+	END FOR //i = 0; i < N; i = i + 1
+	OUT contatore
+END PROG //main
