@@ -19,12 +19,16 @@ int main()
         F = (C*9)/5 + 32.0;
         printf("In Fahrenheit: %f\n", F);
     }
-    else
+    else if(scelta == 2)
     {
         printf("Inserisci la temperatura in Fahrenheit: ");
         scanf("%f", &F);
         C = (F - 32.0)*5/9;
         printf("In Fahrenheit: %f\n", C);
+    }
+    else
+    {
+        printf("Attenzione: dovevi inserire 1 o 2.");
     }
     return 0;
 }
