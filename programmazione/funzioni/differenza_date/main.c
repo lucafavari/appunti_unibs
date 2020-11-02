@@ -62,6 +62,8 @@ int main()
     printf("La differenza vale %d\n", d);
     d = differenza_date(2, 11, 2020, 2, 11, 2020);
     printf("La differenza vale %d\n", d);
+    //Questa si può verificare con la calcolatrice di Windows
+    //il risultato è effettivamente 7188
     d = differenza_date(2, 11, 2020, 27, 2, 2001);
     printf("La differenza vale %d\n", d);
     return 0;
