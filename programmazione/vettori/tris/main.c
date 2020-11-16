@@ -15,9 +15,9 @@ char stampa_simbolo(int n)
     if (n == 0)
         return ' ';
     if (n == 1)
-        return 'o';
+        return 'O';
     if (n == 2)
-        return 'x';
+        return 'X';
 }
 
 void stampa_valori_riga(int v[])
@@ -51,7 +51,7 @@ void stampa_griglia(int m[][N], int n)
 int controllo(int m[][N], int n)
 {
     //controllo per righe
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
         if (m[i][0] == m[i][1] &&
             m[i][1] == m[i][2] && m[i][0] != 0)
             return m[i][0];
@@ -77,13 +77,73 @@ int controllo(int m[][N], int n)
     return 3;
 }
 
+/**
+Controllo della correttezza di una mossa
+Ritorna 1 se la mossa è corretta, 0 altrimenti
+*/
+
+int mossa_corretta(int m[][N], int n, int riga, int colonna)
+{
+    if (riga < 0 || riga >= n)
+        return 0;
+    if (colonna < 0 || colonna >= N)
+        return 0;
+    if (m[riga][colonna] != 0)
+        return 0;
+    return 1;
+}
+
 int main()
 {
     int tris[N][N];
+    int turno = 1;
+    int controllo_termine = 0;
     inizializza_griglia(tris, N);
     stampa_griglia(tris, N);
-    tris[0][0] = 1;
+    while(controllo_termine == 0)
+    {
+        int riga, colonna;
+        printf("Fai la tua mossa giocatore %d\n", turno);
+        scanf("%d", &riga);
+        scanf("%d", &colonna);
+
+        //while(mossa_corretta(tris, N, riga, colonna) == 0)
+        while(!mossa_corretta(tris, N, riga-1, colonna-1))
+        {
+            printf("Attenzione, fai una mossa corretta\n", turno);
+            scanf("%d", &riga);
+            scanf("%d", &colonna);
+        }
+        riga--;
+        colonna--;
+        tris[riga][colonna] = turno;
+        stampa_griglia(tris, N);
+        if (turno == 1)
+            turno = 2;
+        else
+            turno = 1;
+        controllo_termine = controllo(tris, N);
+    }
+    if (controllo_termine == 1)
+        printf("Hai vinto giocatore 1\n");
+    else if (controllo_termine == 2)
+        printf("Hai vinto giocatore 2\n");
+    else
+        printf("La partita è finita in parità\n");
+
+
+    /*tris[0][0] = 1;
     tris[1][1] = 2;
     stampa_griglia(tris, N);
+    printf("Controllo %d\n", controllo(tris, N));
+    tris[1][0] = 2;
+    tris[1][2] = 2;
+    stampa_griglia(tris, N);
+    printf("Controllo %d\n", controllo(tris, N));
+    */
     return 0;
 }
+
+
+
+
