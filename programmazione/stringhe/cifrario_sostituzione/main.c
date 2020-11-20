@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 100
-
 int carattere_valido(char c)
 {
     if (c >= 'A' && c <= 'Z')
@@ -19,7 +17,6 @@ char minuscolo(char c)
     return c;
 }
 
-
 void pulisci(char *s)
 {
     int i, k = 0;
@@ -34,56 +31,39 @@ void pulisci(char *s)
     s[k] = '\0';
 }
 
-char cifra_carattere(char c, int n)
+char cifra_carattere(char c, char *chiave)
 {
-    return (((c - 'a') + n) % 26) + 'a';
+    return chiave[c - 'a'];
 }
 
-//Nel caso del cifrario storico di Cesare chiave = 3
-void cifra(char *chiaro, char *cifrata, int chiave)
+void cifra(char *chiara, char *cifrata, char *chiave)
 {
     int i;
     //Ciclo tipico che itera su ogni carattere di una stringa
-    for (i = 0; chiaro[i] != '\0'; i++)
+    for (i = 0; chiara[i] != '\0'; i++)
     {
-        cifrata[i] = cifra_carattere(chiaro[i], chiave);
+        cifrata[i] = cifra_carattere(chiara[i], chiave);
     }
     cifrata[i] = '\0';
 }
 
-char decifra_carattere(char c, int n)
-{
-    return (((c - 'a') - n) + 26) % 26 + 'a';
-}
-
-void decifra(char *cifrata, char *chiaro, int chiave)
-{
-    int i;
-    //Ciclo tipico che itera su ogni carattere di una stringa
-    for (i = 0; cifrata[i] != '\0'; i++)
-    {
-        chiaro[i] = decifra_carattere(cifrata[i], chiave);
-    }
-    chiaro[i] = '\0';
-}
-
-#define CHIAVE 3
+#define N 100
 
 int main()
 {
+    char chiave[] = "rtazxcvyuioplkjhqwegfdsbnm";
     char chiaro[N], cifrato[N], decifrato[N];
-    printf("Inserisci la frase da codificare: ");
+    printf("Cifrario a sostituzione. Inserisci la frase da codificare: ");
     //Si suppone che la frase in input sia senza spazi e con solo minuscole
     //scanf("%s", chiaro);
     //Faccio inserire all'utente quello che vuole
     fgets(chiaro, N, stdin);
     printf("La frase in chiaro prima della \"pulizia\" era: %s\n", chiaro);
     pulisci(chiaro);
-    cifra(chiaro, cifrato, CHIAVE);
+    cifra(chiaro, cifrato, chiave);
     printf("La frase in chiaro era: %s\n", chiaro);
     printf("La frase cifrata diventa: %s\n", cifrato);
-    decifra(cifrato, decifrato, CHIAVE);
-    printf("La frase decifrata diventa: %s\n", decifrato);
-
+    //decifra(cifrato, decifrato, chiave);
+    //printf("La frase decifrata diventa: %s\n", decifrato);
     return 0;
 }
