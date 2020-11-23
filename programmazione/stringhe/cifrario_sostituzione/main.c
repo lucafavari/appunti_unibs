@@ -47,6 +47,29 @@ void cifra(char *chiara, char *cifrata, char *chiave)
     cifrata[i] = '\0';
 }
 
+char decifra_carattere(char c, char *chiave)
+{
+    int indice;
+    for (int i = 0; i < 26 /*oppure chiave[i] != '\0' */; i++)
+        if (c == chiave[i])
+        {
+            indice = i;
+            break;
+        }
+    return 'a' + indice;
+}
+
+void decifra(char *cifrata, char *chiara, char *chiave)
+{
+    int i;
+    //Ciclo tipico che itera su ogni carattere di una stringa
+    for (i = 0; cifrata[i] != '\0'; i++)
+    {
+        chiara[i] = decifra_carattere(cifrata[i], chiave);
+    }
+    chiara[i] = '\0';
+}
+
 #define N 100
 
 int main()
@@ -63,7 +86,7 @@ int main()
     cifra(chiaro, cifrato, chiave);
     printf("La frase in chiaro era: %s\n", chiaro);
     printf("La frase cifrata diventa: %s\n", cifrato);
-    //decifra(cifrato, decifrato, chiave);
-    //printf("La frase decifrata diventa: %s\n", decifrato);
+    decifra(cifrato, decifrato, chiave);
+    printf("La frase decifrata diventa: %s\n", decifrato);
     return 0;
 }
