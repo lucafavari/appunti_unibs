@@ -10,20 +10,58 @@ void my_string_copy(char *dest, char *src)
     dest[i] = '\0';
 }
 
+//Ritorna 0 se sono la stessa stringha
+//Ritorna -1 se la prima stringa è minore della seconda
+//cioè in ordine alfabetico viene prima
+//Ritorna 1 se la prima stringa è maggiore della seconda
 int my_string_compare(char *dest, char *src)
 {
-    for (int i = 0; dest[i] != '\0' && src[i] != '\0'; i++)
+    int i;
+    for (i = 0; dest[i] != '\0' && src[i] != '\0'; i++)
         if (dest[i] != src[i])
         {
             if (dest[i] < src[i])
                 return -1;
             if (dest[i] > src[i])
-                return +1;
+                return 1;
         }
-    return 0;
+    if (dest[i] == '\0' && src[i] == '\0')
+        return 0;
+    if (dest[i] < src[i])
+        return -1;
+    if (dest[i] > src[i])
+        return 1;
 }
 
-#define N 10
+void my_string_concat(char *dest, char *src)
+{
+    int i;
+    //Ci portiamo in fondo a dest con l'indice i
+    for (i = 0; dest[i] != '\0'; i++);
+    int i_src = 0;
+    //Scorriamo tutta src con l'indice i_src e copiamo
+    //tutti i caratteri in src all'interno di dest
+    //partendo dalla posizione del terminatore
+    //trovata in precedenza
+    for(;src[i_src] != '\0'; i_src++)
+    {
+        dest[i] = src[i_src];
+        i++;
+    }
+    dest[i] = '\0';
+}
+
+int my_string_length(char *src)
+{
+    int i = 0;
+    while (src[i++]);
+
+    //while (src[i] != '\0') i++;
+    //for (i = 0; src[i] != '\0'; i++);
+    return i - 1;
+}
+
+#define N 100
 
 int main()
 {
@@ -47,10 +85,22 @@ int main()
     s1 = s1 + s2; //Concatenzione NO
     */
 
-    char prima[] = "asa";
-    char seconda[] = "Casa";
+    char prima[] = "Casale";
+    char seconda[] = "casa";
     printf("\n\n\nIl risultato del confronto vale %d",
            my_string_compare(prima, seconda));
+
+    char risultato[N];
+    my_string_copy(risultato, "Ciao");
+    my_string_concat(risultato, " a tutti da ");
+    my_string_concat(risultato, seconda);
+
+    printf("\n\nLa concatenazione produce: %s\n", risultato);
+    int lunghezza = my_string_length(risultato);
+    printf("\nLa lunghezza della stringa \"%s\" è : %d",
+           risultato, lunghezza);
+    printf("\nLa lunghezza della stringa \"%s\" è : %d",
+           risultato, strlen(risultato));
     return 0;
 }
 
