@@ -45,6 +45,15 @@ int indirizzo_valido(char *s)
     if (seconda_parte[0] == '.' ||
         seconda_parte[strlen(seconda_parte) - 1] == '.')
         return 0;
+    posizione = posizione_carattere(seconda_parte, '.');
+    char dominio[N];
+    strncpy(dominio, &seconda_parte[posizione + 1], N);
+    //printf("%s\n", dominio);
+    if (strlen(dominio) != 2 && strlen(dominio) != 3)
+        return 0;
+    for (int i; dominio[i] != '\0'; i++)
+        if (!isalpha(dominio[i]))
+            return 0;
     return 1;
 }
 
@@ -60,8 +69,8 @@ int indirizzi_validi(char indirizzi[][N], int n)
 int main()
 {
     char indirizzi[][N] = {
-        "ale@unibs.it",
-        "geppo@unipiit",
+        "ale@unibs.net",
+        "geppo@unipi.it",
         "gina@uni@it"
     };
     for (int i = 0; i < 3; i++ )
