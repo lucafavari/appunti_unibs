@@ -27,5 +27,6 @@ Complesso coniugato(Complesso c);
 
 Complesso somma(Complesso a, Complesso b);
 
+Complesso prodotto(Complesso a, Complesso b);
 
 #endif // COMPLESSI_H_INCLUDED

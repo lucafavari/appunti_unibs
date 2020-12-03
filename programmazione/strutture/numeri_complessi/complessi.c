@@ -49,3 +49,11 @@ Complesso somma(Complesso a, Complesso b)
     temp.im = a.im + b.im;
     return temp;
 }
+
+Complesso prodotto(Complesso a, Complesso b)
+{
+    Complesso temp;
+    temp.re = a.re*b.re - a.im*b.im;
+    temp.im = a.re*b.im + a.im*b.re;
+    return temp;
+}

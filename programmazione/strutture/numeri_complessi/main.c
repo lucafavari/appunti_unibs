@@ -15,6 +15,10 @@ int main()
     stampaAlg(a);
     Complesso c = somma(a, a);
     stampaAlg(c);
+    c = prodotto(a, c);
+    stampaAlg(c);
+    c = somma(prodotto(a,c), prodotto(c,c));
+    stampaAlg(c);
 
     return 0;
 }
