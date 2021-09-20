@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-20 05.06.20 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjA7IjA0LjUyLjE0ICI7MjA5OA=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjA7IjA1LjA2LjIwICI7MTsyMjAz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, somma, i" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="i" expression="1"/>
+            <assign variable="somma" expression="0"/>
+            <while expression="i &lt;= N/2">
+                <if expression="N % i == 0">
+                    <then>
+                        <assign variable="somma" expression="somma + i"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <if expression="N == somma">
+                <then>
+                    <output expression="&quot;Perfetto&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Non perfetto&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
