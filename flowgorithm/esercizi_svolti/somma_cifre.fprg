@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-20 05.48.55 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjA7IjA1LjM0LjQ5ICI7MjEwNw=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjA7IjA1LjQ4LjU1ICI7NDsyMjIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, cifre, somma" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="cifre" expression="0"/>
+            <assign variable="somma" expression="0"/>
+            <while expression="N &gt; 0">
+                <assign variable="somma" expression="somma + N%10"/>
+                <assign variable="N" expression="N / 10"/>
+                <assign variable="cifre" expression="cifre + 1"/>
+            </while>
+            <output expression="cifre" newline="True"/>
+            <output expression="somma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
