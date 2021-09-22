@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-22 03.19.28 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjI7IjAyLjM4LjE2ICI7MjEwNA=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjI7IjAzLjE5LjI4ICI7MjsyMjE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="base, potenza" type="Real" array="False" size=""/>
+            <declare name="esponente, i" type="Integer" array="False" size=""/>
+            <input variable="base"/>
+            <input variable="esponente"/>
+            <assign variable="potenza" expression="1"/>
+            <for variable="i" start="1" end="esponente" direction="inc" step="1">
+                <assign variable="potenza" expression="potenza * base"/>
+            </for>
+            <output expression="potenza" newline="True"/>
+            <comment text="Ripetiamo la soluzione per esercizio usando un while"/>
+            <assign variable="potenza" expression="1"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i &lt;= esponente">
+                <assign variable="potenza" expression="potenza * base"/>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <output expression="potenza" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-22 03.32.43 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjI7IjAzLjI2LjA4ICI7MjEwMw=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjI7IjAzLjMyLjQzICI7MTsyMjA3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="capitale, interesse, totale" type="Real" array="False" size=""/>
+            <declare name="anni, i" type="Integer" array="False" size=""/>
+            <input variable="capitale"/>
+            <input variable="interesse"/>
+            <input variable="anni"/>
+            <assign variable="totale" expression="capitale"/>
+            <for variable="i" start="1" end="anni" direction="inc" step="1">
+                <assign variable="totale" expression="totale + totale * interesse / 100"/>
+            </for>
+            <output expression="totale" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

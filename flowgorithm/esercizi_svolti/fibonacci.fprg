@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-22 05.00.50 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjI7IjAzLjM0LjU5ICI7MjEwOA=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjI7IjA1LjAwLjUwICI7MTsyMjAy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, fN, fN1, fN2, i" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="fN1" expression="1"/>
+            <assign variable="fN2" expression="0"/>
+            <for variable="i" start="2" end="N" direction="inc" step="1">
+                <assign variable="fN" expression="fN1 + fN2"/>
+                <output expression="i" newline="False"/>
+                <output expression="&quot;-&gt;&quot;" newline="False"/>
+                <output expression="fN" newline="True"/>
+                <assign variable="fN2" expression="fN1"/>
+                <assign variable="fN1" expression="fN"/>
+            </for>
+            <output expression="fN" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
