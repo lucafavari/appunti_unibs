@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-23 11.33.32 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjM7IjExLjA3LjA0ICI7MjA5OA=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjM7IjExLjMzLjMyICI7MTsyMjA2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, numero, i, precedente, crescente" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <input variable="numero"/>
+            <assign variable="precedente" expression="numero"/>
+            <comment text="La variabile flag crescente viene posta a uno per indicare che inizialmente, non avendo ancora letto la sequenza, la supponga crescente"/>
+            <assign variable="crescente" expression="1"/>
+            <for variable="i" start="1" end="N - 1" direction="inc" step="1">
+                <input variable="numero"/>
+                <if expression="numero &lt;= precedente">
+                    <then>
+                        <assign variable="crescente" expression="0"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="precedente" expression="numero"/>
+            </for>
+            <if expression="crescente == 1">
+                <then>
+                    <output expression="&quot;Sequenza crescente&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Sequenza non crescente&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
