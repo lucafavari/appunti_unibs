@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-27 05.03.27 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjUyLjEwICI7MjEwMQ=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA1LjAzLjI3ICI7MTsyMjE0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, somma, x, trovati" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="trovati" expression="0"/>
+            <for variable="x" start="1" end="N - 1" direction="inc" step="1">
+                <declare name="temp" type="Integer" array="False" size=""/>
+                <assign variable="temp" expression="x"/>
+                <assign variable="somma" expression="0"/>
+                <while expression="temp &gt; 0">
+                    <assign variable="somma" expression="somma + temp%10"/>
+                    <assign variable="temp" expression="temp/10"/>
+                </while>
+                <if expression="x + somma == N">
+                    <then>
+                        <output expression="x" newline="True"/>
+                        <assign variable="trovati" expression="1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="trovati == 0">
+                <then>
+                    <output expression="&quot;Nessun numero trovato&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

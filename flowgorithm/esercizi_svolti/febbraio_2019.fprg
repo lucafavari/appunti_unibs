@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-27 04.40.23 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjMxLjA1ICI7MjEwMg=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjQwLjIzICI7MjsyMjEx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, numero, maggiore, precedente, i" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <input variable="precedente"/>
+            <assign variable="maggiore" expression="-1"/>
+            <for variable="i" start="2" end="N" direction="inc" step="1">
+                <input variable="numero"/>
+                <while expression="numero - precedente &lt; 0">
+                    <input variable="numero"/>
+                </while>
+                <if expression="numero - precedente &gt; maggiore">
+                    <then>
+                        <assign variable="maggiore" expression="numero - precedente"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="precedente" expression="numero"/>
+            </for>
+            <output expression="maggiore" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

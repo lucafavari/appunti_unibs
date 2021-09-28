@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-27 04.29.25 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjEwLjQzICI7MjEwMQ=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjI5LjI1ICI7MTsyMjE5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, numero, lunghezza, massimo, i" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="massimo" expression="-1"/>
+            <assign variable="lunghezza" expression="0"/>
+            <for variable="i" start="1" end="N" direction="inc" step="1">
+                <input variable="numero"/>
+                <if expression="numero &gt; 0">
+                    <then>
+                        <assign variable="lunghezza" expression="lunghezza + 1"/>
+                    </then>
+                    <else>
+                        <if expression="lunghezza &gt; massimo">
+                            <then>
+                                <assign variable="massimo" expression="lunghezza"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="lunghezza" expression="0"/>
+                    </else>
+                </if>
+            </for>
+            <if expression="lunghezza &gt; massimo">
+                <then>
+                    <assign variable="massimo" expression="lunghezza"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="massimo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

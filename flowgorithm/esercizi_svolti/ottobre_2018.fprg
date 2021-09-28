@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-27 04.49.55 "/>
+        <attribute name="created" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjQxLjE0ICI7MjEwMw=="/>
+        <attribute name="edited" value="YWxleF8yO1BVQ0NBOzIwMjEtMDktMjc7IjA0LjQ5LjU1ICI7MTsyMjI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, quanti, divisore" type="Integer" array="False" size=""/>
+            <assign variable="quanti" expression="0"/>
+            <do expression="a &lt;= 0">
+                <input variable="a"/>
+            </do>
+            <do expression="b &lt;= 0">
+                <input variable="b"/>
+            </do>
+            <assign variable="i" expression="1"/>
+            <while expression="i &lt;= a &amp;&amp; i &lt;= b">
+                <if expression="a % i == 0 &amp;&amp; b % i == 0">
+                    <then>
+                        <assign variable="quanti" expression="quanti + 1"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <output expression="quanti" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
