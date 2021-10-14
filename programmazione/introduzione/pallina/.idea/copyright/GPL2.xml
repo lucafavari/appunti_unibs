@@ -1,0 +1,6 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="Project name: &amp;#36;project.name&#10;Copyright (C) Alessandro Bugatti&#10;Last updated: &amp;#36;file.lastModified&#10;&#10;This program is free software; you can redistribute it and/or modify&#10;it under the terms of the GNU General Public License as published by&#10;the Free Software Foundation; either version 2 of the License, or (at&#10;your option) any later version.&#10;&#10;This program is distributed in the hope that it will be useful, but&#10;WITHOUT ANY WARRANTY; without even the implied warranty of&#10;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&#10;General Public License for more details.&#10;&#10;You should have received a copy of the GNU General Public License&#10;along with this program; if not, write to the Free Software&#10;Foundation, Inc., 59 Temple Place, Suite 330, Bo&#10;USA." />
+    <option name="myName" value="GPL2" />
+  </copyright>
+</component>
