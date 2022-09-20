@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-09-20 03:42:46 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0wOS0yMDsiMDM6MzI6MTEgIjsyMDUz"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0wOS0yMDsiMDM6NDI6NDYgIjsxOzIxNzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, M, quadrato" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="M" expression="1"/>
+            <while expression="M * M &lt; N">
+                <assign variable="quadrato" expression="M * M"/>
+                <assign variable="M" expression="M + 1"/>
+            </while>
+            <output expression="quadrato" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
