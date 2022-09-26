@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-09-26 04:38:33 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0wOS0yNjsiMDQ6MTc6MTYgIjsyMDY4"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0wOS0yNjsiMDQ6Mzg6MzMgIjsxOzIxNzg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="h, s, t, g" type="Real" array="False" size=""/>
+            <input variable="h"/>
+            <assign variable="t" expression="0"/>
+            <assign variable="g" expression="9.81"/>
+            <assign variable="s" expression="0"/>
+            <while expression="h - s &gt; 0">
+                <output expression="t" newline="False"/>
+                <output expression="&quot; -&gt; &quot;" newline="False"/>
+                <output expression="h - s" newline="True"/>
+                <assign variable="t" expression="t + 0.01"/>
+                <assign variable="s" expression="0.5 * g * t * t"/>
+            </while>
+            <output expression="t" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
