@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-09-27 02:38:32 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0wOS0yNzsiMDI6MzA6NDEgIjsyMDYw"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0wOS0yNzsiMDI6Mzg6MzIgIjsxOzIxNzY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="voto" type="Integer" array="False" size=""/>
+            <do expression="voto &lt; 1 || voto &gt; 110">
+                <input variable="voto"/>
+            </do>
+            <output expression="voto * 10 / 110.0" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
