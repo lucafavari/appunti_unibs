@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-09-29 02:48:13 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0wOS0yOTsiMDI6MzU6NDQgIjsyMDcw"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0wOS0yOTsiMDI6NDg6MTMgIjsxOzIxNzg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, numero, massimo, i, quante" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <input variable="numero"/>
+            <assign variable="massimo" expression="numero"/>
+            <assign variable="quante" expression="1"/>
+            <for variable="i" start="2" end="N" direction="inc" step="1">
+                <input variable="numero"/>
+                <if expression="numero &gt; massimo">
+                    <then>
+                        <assign variable="massimo" expression="numero"/>
+                        <assign variable="quante" expression="1"/>
+                    </then>
+                    <else>
+                        <if expression="numero == massimo">
+                            <then>
+                                <assign variable="quante" expression="quante + 1"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </for>
+            <output expression="massimo" newline="True"/>
+            <output expression="quante" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

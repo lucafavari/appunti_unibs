@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-09-29 02:32:58 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0wOS0yOTsiMDI6MjE6MzQgIjsyMDY0"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0wOS0yOTsiMDI6MzI6NTggIjsxOzIxODA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, F, Fultimo, Fpenultimo, i" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="Fultimo" expression="1"/>
+            <assign variable="Fpenultimo" expression="1"/>
+            <for variable="i" start="3" end="N" direction="inc" step="1">
+                <assign variable="F" expression="Fultimo + Fpenultimo"/>
+                <assign variable="Fpenultimo" expression="Fultimo"/>
+                <assign variable="Fultimo" expression="F"/>
+            </for>
+            <output expression="F" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

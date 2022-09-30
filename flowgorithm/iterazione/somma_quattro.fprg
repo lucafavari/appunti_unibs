@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-09-29 03:15:18 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0wOS0yOTsiMDI6NTE6MTMgIjsyMDY0"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0wOS0yOTsiMDM6MTU6MTggIjsxOzIxNzg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, numero, somma, conta, i" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="somma" expression="0"/>
+            <assign variable="conta" expression="0"/>
+            <for variable="i" start="1" end="N" direction="inc" step="1">
+                <input variable="numero"/>
+                <assign variable="somma" expression="somma + numero"/>
+                <assign variable="conta" expression="conta  + 1"/>
+                <if expression="conta == 4">
+                    <then>
+                        <output expression="somma" newline="True"/>
+                        <assign variable="somma" expression="0"/>
+                        <assign variable="conta" expression="0"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="conta != 0">
+                <then>
+                    <output expression="somma" newline="True"/>
+                    <output expression="conta" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
