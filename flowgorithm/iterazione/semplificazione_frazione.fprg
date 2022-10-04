@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-03 04:35:30 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0xMC0wMzsiMDQ6Mjg6MDMgIjsyMDUz"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0xMC0wMzsiMDQ6MzU6MzAgIjsxOzIxNTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num, den, i" type="Integer" array="False" size=""/>
+            <input variable="num"/>
+            <input variable="den"/>
+            <for variable="i" start="num/2" end="2" direction="dec" step="1">
+                <if expression="num % i == 0 &amp;&amp; den % i == 0">
+                    <then>
+                        <assign variable="num" expression="num / i"/>
+                        <assign variable="den" expression="den / i"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="num" newline="True"/>
+            <output expression="den" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

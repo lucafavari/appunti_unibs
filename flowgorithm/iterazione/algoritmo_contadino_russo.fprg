@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-03 04:52:10 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0xMC0wMzsiMDQ6NDE6MzggIjsyMDU2"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0xMC0wMzsiMDQ6NTI6MTAgIjsxOzIxNTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, M, temp, risultato" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <input variable="M"/>
+            <assign variable="risultato" expression="0"/>
+            <if expression="N &gt; M">
+                <then>
+                    <assign variable="temp" expression="N"/>
+                    <assign variable="N" expression="M"/>
+                    <assign variable="M" expression="temp"/>
+                </then>
+                <else/>
+            </if>
+            <while expression="N &gt; 1">
+                <if expression="N % 2 != 0">
+                    <then>
+                        <assign variable="risultato" expression="risultato + M"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="N" expression="N / 2"/>
+                <assign variable="M" expression="M * 2"/>
+            </while>
+            <assign variable="risultato" expression="risultato + M"/>
+            <output expression="risultato" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

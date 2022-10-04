@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-03 04:25:51 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMi0xMC0wMzsiMDM6NTg6NTAgIjsyMDU3"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMi0xMC0wMzsiMDQ6MjU6NTEgIjsyOzIxNjI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, i" type="Integer" array="False" size=""/>
+            <declare name="primo" type="Boolean" array="False" size=""/>
+            <input variable="N"/>
+            <assign variable="primo" expression="true"/>
+            <for variable="i" start="2" end="sqrt(N)" direction="inc" step="1">
+                <if expression="N % i == 0">
+                    <then>
+                        <assign variable="primo" expression="false"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="primo == true">
+                <then>
+                    <output expression="&quot;Primo&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Non primo&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
