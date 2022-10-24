@@ -27,6 +27,9 @@ int main() {
             volumeMassimo = volumeCorrente;
             latoMassimo = latoCorrente;
         }
+        else{
+            break;//fa uscire dal ciclo corrente
+        }
     }
     printf("Il lato che produce il volume massimo è %f e produce un volume di %f",
            latoMassimo, volumeMassimo);
