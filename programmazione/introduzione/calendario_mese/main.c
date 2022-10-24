@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    int mese, giorno;
+    int mese = 1, giorno = 4;
     int giorni_del_mese;
-    printf("Inserisci il mese e il giorno di partenza: ");
+    /*printf("Inserisci il mese e il giorno di partenza: ");
     scanf("%d", &mese);
-    scanf("%d", &giorno);
+    scanf("%d", &giorno);*/
     if (mese == 2){
         giorni_del_mese = 28;
     }
@@ -28,6 +28,15 @@ int main() {
             break;
         default:
             giorni_del_mese = 31;
+    }
+    for (int i = 1; i < giorno; ++i) {
+        printf("    ");
+    }
+
+    for (int i = 1; i <= giorni_del_mese; ++i) {
+        printf("%4d", i);
+        if ((i + giorno - 1) % 7 == 0)
+            printf("\n");
     }
     return 0;
 }
