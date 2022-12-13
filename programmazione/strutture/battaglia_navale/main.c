@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define N 0
 #define E 1
@@ -10,6 +12,8 @@
 #define N4 3
 
 #define DIM 10
+
+#define TEST
 
 typedef struct {
     int r;
@@ -160,6 +164,7 @@ int inserisci_nave(Flotta *flotta, Nave nave){
         return 0;
     flotta->navi[flotta->n_navi] = nave;
     flotta->n_navi++;
+    return 1;
 }
 
 int nave_colpita(Nave nave, Posizione colpo){
@@ -221,7 +226,7 @@ int flotta_affondata(Flotta f)
     return 1;
 }
 
-void stampa_flotta(Flotta f)
+int navi_rimaste(Flotta f)
 {
     int navi_rimaste = 0;
     for (int i = 0; i < f.n_navi; ++i) {
@@ -229,7 +234,29 @@ void stampa_flotta(Flotta f)
             navi_rimaste++;
         }
     }
-    printf("Ti sono rimaste %d navi\n", navi_rimaste);
+    return navi_rimaste;
+}
+
+void stampa_nave(Nave nave){
+    printf("Nave da %d", nave.dimensione);
+    if (nave.colpi_subiti)
+        printf(", colpita in %d parti", nave.colpi_subiti);
+    printf("\n");
+}
+
+void stampa_navi_rimaste(Flotta f){
+    for (int i = 0; i < f.n_navi; ++i) {
+        if (!f.navi[i].affondata)
+            stampa_nave(f.navi[i]);
+    }
+}
+
+void azzera_pannello (Pannello *p){
+    for (int i = 0; i < DIM; ++i) {
+        for (int j = 0; j < DIM; ++j) {
+            p->m[i][j] = 8;
+        }
+    }
 }
 
 void stampa_pannello (Pannello p){
@@ -241,11 +268,111 @@ void stampa_pannello (Pannello p){
     }
 }
 
+
+
 int main() {
     Giocatore giocatori[2];
-    int turno = 1;
+    strncpy(giocatori[0].nome, "Pino", 50);
+    strncpy(giocatori[1].nome, "Piero", 50);
+    giocatori[0].flotta.n_navi = 0;
+    giocatori[1].flotta.n_navi = 0;
+    azzera_pannello(&giocatori[0].pannello);
+    azzera_pannello(&giocatori[1].pannello);
+    int turno = 0;
     Posizione colpo;
-    int esito = colpisci(&giocatori[1 - turno].flotta, colpo);
-    segna_colpo(&giocatori[turno], colpo, esito);
+    //Parte dell'inserimento delle flotte, ogni giocatore inserisce le proprie
+    //navi, partendo dalle più piccole fino alle più grosse
+    for (int i = 0; i < 2; ++i) {
+        Nave nave;
+        int riuscita;
+        printf("Inserimento delle navi.\n");
+        printf("Inserisci le navi da due.\n");
+        for (int j = 0; j < N2; ++j) {
+            do {
+                printf("\nNavi già inserite: %d\n", giocatori[i].flotta.n_navi);
+                printf("Inserisci la posizione della prua: ");
+#ifdef TEST
+                nave.posizione.c = rand()%10;
+                nave.posizione.r = rand()%10;
+#else
+                scanf("%d", &nave.posizione.r);
+                scanf("%d", &nave.posizione.c);
+#endif
+                printf("Inserisci la direzione (N - 0, E - 1, S - 2, W - 3): ");
+#ifdef TEST
+                nave.orientamento = rand()%4;
+#else
+                scanf("%d", &nave.orientamento);
+#endif
+                nave.dimensione = 2;
+                nave.colpi_subiti = 0;
+                nave.affondata = 0;
+                riuscita = inserisci_nave(&giocatori[i].flotta, nave);
+            } while (!riuscita);
+        }
+        printf("Inserisci le navi da tre.\n");
+        for (int j = 0; j < N3; ++j) {
+            do {
+                printf("\nNavi già inserite: %d\n", giocatori[i].flotta.n_navi);
+                printf("Inserisci la posizione della prua: ");
+#ifdef TEST
+                nave.posizione.c = rand()%10;
+                nave.posizione.r = rand()%10;
+#else
+                scanf("%d", &nave.posizione.r);
+                scanf("%d", &nave.posizione.c);
+#endif
+                printf("Inserisci la direzione (N - 0, E - 1, S - 2, W - 3): ");
+#ifdef TEST
+                nave.orientamento = rand()%4;
+#else
+                scanf("%d", &nave.orientamento);
+#endif
+                nave.dimensione = 3;
+                nave.colpi_subiti = 0;
+                nave.affondata = 0;
+                riuscita = inserisci_nave(&giocatori[i].flotta, nave);
+            } while (!riuscita);
+        }
+        printf("Inserisci le navi da quattro.\n");
+        for (int j = 0; j < N4; ++j) {
+            do {
+                printf("\nNavi già inserite: %d %d\n", giocatori[i].flotta.n_navi, j);
+                printf("Inserisci la posizione della prua: ");
+#ifdef TEST
+                nave.posizione.c = rand()%10;
+                nave.posizione.r = rand()%10;
+#else
+                scanf("%d", &nave.posizione.r);
+                scanf("%d", &nave.posizione.c);
+#endif
+                printf("Inserisci la direzione (N - 0, E - 1, S - 2, W - 3): ");
+#ifdef TEST
+                nave.orientamento = rand()%4;
+#else
+                scanf("%d", &nave.orientamento);
+#endif
+                nave.dimensione = 4;
+                nave.colpi_subiti = 0;
+                nave.affondata = 0;
+                riuscita = inserisci_nave(&giocatori[i].flotta, nave);
+            } while (!riuscita);
+        }
+    }
+
+    //Gioco
+    do {
+        printf("Riepilogo della tua situazione\n");
+        stampa_pannello(giocatori[turno].pannello);
+        stampa_navi_rimaste(giocatori[turno].flotta);
+        printf("\nInserisci il colpo giocatore %d: ", turno + 1);
+        scanf("%d", &colpo.r);
+        scanf("%d", &colpo.c);
+        int esito = colpisci(&giocatori[1 - turno].flotta, colpo);
+        if (esito > 0)
+            printf("Hai colpito qualcosa!\n");
+        segna_colpo(&giocatori[turno], colpo, esito);
+        turno = 1 - turno;
+    }while(navi_rimaste(giocatori[0].flotta) && navi_rimaste(giocatori[1].flotta));
     return 0;
 }
