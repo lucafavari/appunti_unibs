@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-21 09:17:34 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMy0wOS0yMTsiMDg6NTY6NDQgIjsyMDcy"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMy0wOS0yMTsiMDk6MTc6MzQgIjsxOzIxNzc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="costoAbbonamento, costoBiglietto" type="Real" array="False" size=""/>
+            <declare name="NIngressi" type="Integer" array="False" size=""/>
+            <input variable="costoAbbonamento"/>
+            <input variable="costoBiglietto"/>
+            <input variable="NIngressi"/>
+            <if expression="costoAbbonamento&gt;costoBiglietto*NIngressi">
+                <then>
+                    <output expression="&quot;biglietti singoli&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;abbonamento&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-21 09:37:07 "/>
+        <attribute name="created" value="YWxleDtDQUxWSU47MjAyMy0wOS0yMTsiMDg6NTY6NDQgIjsyMDcy"/>
+        <attribute name="edited" value="YWxleDtDQUxWSU47MjAyMy0wOS0yMTsiMDk6Mzc6MDcgIjszOzIxODE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Dato il costo dell'abbonamento a 10 ingressi, il costo del biglietto singolo e il numero di ingressi che si vogliono fare, anche pi&#249; di 10, stabilire il numero di abbonamenti e biglietti singoli che conviene comprare per spendere il meno possibile. Si pu&#242; supporre che il costo dell'abbonamento sia sempre inferiore al costo dell'acquisto di 10 biglietti singoli."/>
+            <declare name="costoAbbonamento, costoBiglietto" type="Real" array="False" size=""/>
+            <declare name="NIngressi, nAbbonamenti, nBiglietti" type="Integer" array="False" size=""/>
+            <input variable="costoAbbonamento"/>
+            <input variable="costoBiglietto"/>
+            <input variable="NIngressi"/>
+            <assign variable="nAbbonamenti" expression="NIngressi / 10"/>
+            <assign variable="NIngressi" expression="NIngressi % 10"/>
+            <if expression="costoAbbonamento&gt;costoBiglietto*NIngressi">
+                <then>
+                    <assign variable="nBiglietti" expression="NIngressi"/>
+                </then>
+                <else>
+                    <assign variable="nAbbonamenti" expression="nAbbonamenti + 1"/>
+                    <assign variable="nBiglietti" expression="0"/>
+                </else>
+            </if>
+            <output expression="nAbbonamenti" newline="True"/>
+            <output expression="nBiglietti" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
